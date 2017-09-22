@@ -1,0 +1,22 @@
+＃引入枕头模块
+import pillow
+form PIL import Image,ImageFont,ImageColor,ImageDraw
+def add_picture(img):
+    #创建一个Draw对象
+    draw = ImageDraw.draw(img)
+    #创建一个Font对象
+    myfont = ImageFont.turetype('arial.ttf',40)
+    fillcolor = ImageColor.colormap.get('red')
+    width,height = img.size
+    draw.text((width-30,0),'2',font=myfont,fill=fillcolor)
+    img.save('weixin.jpg','jpeg')
+    return 0
+    
+if __name__ == '__main__':
+    image=Image.open('houzi.jpg')
+    add_picture(image)
+    
+    
+    
+    
+    
