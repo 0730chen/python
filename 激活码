@@ -1,0 +1,21 @@
+＃验证码练习#
+import uuid
+#产生num个验证码，长度默认为8，可以设置
+def create_num(num,length=8):
+    result=[]
+    while num>0:
+    uuid_id=uuid.uuid1()
+    temp = str(uuid_id).replace('_','')[:length]
+    if temp not in result:
+        result.append(temp)
+        num -=1
+    return result
+print(create_num(20,10))
+print(create_num(40))
+        
+        
+    
+    
+    
+    
+    
