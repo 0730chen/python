@@ -1,0 +1,13 @@
+import re
+
+def file_open(file_name):
+    f = open(file_name,'r').read() 
+    ff = re.findall('([a-zA-Z0-9]+)','f')
+    print(ff)
+    print(len(ff))
+    
+if __name__=='__main__':
+    file = input('你要查询的文件名:')
+    file_open(file)
+    
+    
