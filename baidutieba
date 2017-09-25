@@ -1,0 +1,27 @@
+import requests
+from bs4 import BeautifulSoup
+import os
+from urllib import request
+url = 'http://tieba.baidu.com/p/2166231880'
+r = requests.get(url)
+soup = BeautifulSoup('r.text','lxml')
+img_url = soup.find_all('img')
+links=[]
+for content in img_url:
+    links.append(content.get('src'))
+    print(links)
+    
+if not os.path.exists('tieba'):
+    os.makedirs(tieba)
+    
+i = 0
+for link in links:
+    i+=1
+    filename = 'tieba\\'+'photo'+str(i)+'.jpg'
+    with open(filename,'w'):
+        request.ulretrieve(link,filename)
+
+    
+    
+
+
