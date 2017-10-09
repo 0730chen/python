@@ -1,0 +1,3 @@
+from collections import Counter
+s = 'hello python words'
+print(dict(Counter(s)))
